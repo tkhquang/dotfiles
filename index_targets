@@ -1,0 +1,23 @@
+### List of files/directories which need to be symlinked
+### ~ $HOME
+
+# Files
+.config/nvim/init.vim
+.bash_login
+.bash_logout
+.bash_profile
+.bashrc
+.inputrc
+.p10k.zsh
+.profile
+.tmux.conf
+.vimrc
+.zlogin
+.zlogout
+.zprofile
+.zshenv
+.zshrc
+
+# Directories
+.config/bat
+.config/vivid

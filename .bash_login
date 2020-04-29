@@ -1,0 +1,8 @@
+# ========================================= #
+# .bash_login                               #
+# ========================================= #
+# ~/.bash_profile > ~/.bash_login > and ~/.profile
+
+if [[ -f ~/dotfiles/shell/others/login.sh ]]; then
+  source ~/dotfiles/shell/others/login.sh
+fi

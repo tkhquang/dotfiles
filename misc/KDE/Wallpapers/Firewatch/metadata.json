@@ -1,0 +1,53 @@
+{
+    "KPlugin": {
+        "Authors": [
+            {
+                "Email": "khacquang.trinh@gmail.com",
+                "Name": "Quang Trinh"
+            }
+        ],
+        "Id": "unique_id",
+        "License": "LGPLv3",
+        "Name": "Firewatch"
+    },
+    "Wallpaper": {
+        "Preview": "preview.jpeg",
+        "Smooth": true,
+        "Type": "timed",
+        "MetaData": [
+            {
+                "Time": 0.0,
+                "FileName": "2.jpeg"
+            },
+            {
+                "Time": 0.125,
+                "FileName": "3.jpeg"
+            },
+            {
+                "Time": 0.25,
+                "FileName": "4.jpeg"
+            },
+            {
+                "Time": 0.375,
+                "FileName": "5.jpeg"
+            },
+            {
+                "Time": 0.5,
+                "FileName": "6.jpeg"
+            },
+            {
+                "Time": 0.625,
+                "FileName": "7.jpeg"
+            },
+            {
+                "Time": 0.75,
+                "FileName": "0.jpeg"
+            },
+            {
+                "Time": 0.875,
+                "FileName": "1.jpeg"
+            }
+            
+        ]
+    }
+} 
