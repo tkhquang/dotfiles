@@ -10,31 +10,11 @@ For migration references only. Created in a hurry, expecting mistakes.
 
 1. Tilix
     - `Ctrl+Alt+R` by default conflicts with KDE's "Manually Invoke Action On Current Clipboard" Global Shortcut -> Remove the Global Shortcut
-    - To start Tilix maximized:
-        1. Open`/usr/share/applications/com.gexperts.Terminix.desktop`.
-        2. Add `--maximize` to the Exec commands.
-        3. Make sure `DBusActivatable` is set to `false`.
-        4. Remove -> Add Global Shortcut for Tilix again.
-        5. Logout -> Login for the changes to take effects.
-    - To add `Open Tilix Here` entry in Context Menu for Dolphin:
-        1. Create `~/.local/share/kservices5/ServiceMenus/openTilixHere.desktop`
-        2. Save
-
-            ```desktop
-              [Desktop Entry]
-              Type=Service
-              ServiceTypes=KonqPopupMenu/Plugin
-              MimeType=inode/directory
-              Actions=openTilix;
-              X-KDE-Priority=TopLevel
-              X-KDE-StartupNotify=false
-              Icon=com.gexperts.Tilix
-
-              [Desktop Action openTilix]
-              Name=Open Tilix Here
-              Icon=com.gexperts.Tilix
-              Exec=tilix --maximize -w %f
-            ```
+    - Set to start Tilix maximized:
+        1. Open `System Settings`.
+        2. Search for `Windows Rules`.
+        3. ...
+    - Add `Open Tilix Here` for Dolphin.
 
 2. ibus configs
 3. Rust

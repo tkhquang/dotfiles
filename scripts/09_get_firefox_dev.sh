@@ -25,6 +25,9 @@ X-Ayatana-Desktop-Shortcuts=NewWindow;NewIncognito' >> /usr/share/applications/f
 # For launching Firefox from a CommandLineInterface
 sudo ln -sf /opt/firefox-developer/firefox /usr/local/bin/firefox
 
+# For auto-update feature
+sudo chown -R $USER:$USER /opt/firefox-developer
+
 # TODO: Install userChromeJS support
 # https://github.com/xiaoxiaoflood/firefox-scripts
 

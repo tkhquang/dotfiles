@@ -25,5 +25,7 @@ else
 
   ln -svf ~/.local/share/ArchiSteamFarm/ArchiSteamFarm ~/.local/bin/ArchiSteamFarm
 
+  rm -rf ~/dotfiles/temp.zip
+
   echo ">>> Archi Steam Farm installed!"
 fi
