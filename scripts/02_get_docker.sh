@@ -8,10 +8,13 @@
 echo ">>> Installing docker & docker-compose..."
 
 echo "+ Removing old versions (if any)"
-sudo dnf remove -y docker docker-client docker-client-latest docker-common docker-latest docker-latest-logrotate docker-logrotate docker-selinux docker-engine-selinux docker-engine
+sudo dnf autoremove docker
 
 echo "+ Setting up the stable repository"
-sudo dnf config-manager --add-repo https://download.docker.com/linux/fedora/docker-ce.repo
+curl -O https://download.docker.com/linux/fedora/docker-ce.repo
+# Waiting for official fedora 32 repo
+sed -i 's/$releasever/31/g' docker-ce.repo
+sudo mv docker-ce.repo /etc/yum.repos.d/
 
 echo "+ Installing latest version of Docker Engine and containerd"
 sudo dnf install -y docker-ce docker-ce-cli containerd.io

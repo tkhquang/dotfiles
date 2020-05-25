@@ -2,7 +2,7 @@
 
 My personal dotfiles.
 
-[Fedora 30 KDE Plasma]
+[Fedora 32 KDE Plasma]
 
 For migration references only. Created in a hurry, expecting mistakes.
 
