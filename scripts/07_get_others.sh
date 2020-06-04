@@ -12,7 +12,7 @@ echo "+ Installing Pygments"
 pip3 install --user Pygments
 
 echo "+ Installing other packages"
-sudo dnf -y install tilix vim-enhanced neovim ripgrep bat tmux xclip xsel fd-find fzf exa ibus\*
+sudo dnf -y install tilix vim-enhanced neovim ripgrep bat tmux xclip xsel fd-find fzf exa ibus\* ffmpeg
 
 # vim and neovim
 mkdir -p ~/.config/nvim
