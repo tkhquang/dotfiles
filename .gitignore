@@ -82,3 +82,5 @@ idea/
 
 temp/
 temp.*
+
+bin_common/ngrok
