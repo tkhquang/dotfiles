@@ -14,12 +14,12 @@ while read target; do
     ''| \#*) continue ;;
   esac
   if [[ -f "$HOME/dotfiles/$target" || -d "$HOME/dotfiles/$target" ]]; then
-    ln -svf "$HOME/dotfiles/$target" "$HOME/$target"
+    ln -svfn "$HOME/dotfiles/$target" "$HOME/$target"
   fi
 done < ~/dotfiles/index_targets
 
 # Custom bin
-ln -svf ~/dotfiles/bin_common ~/bin_common
+ln -svfn ~/dotfiles/bin_common ~/bin_common
 
 ### /etc/profile.d/
 # Remove all broken symbolic links in the targer directory (if any)
