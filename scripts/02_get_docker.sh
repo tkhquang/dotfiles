@@ -10,19 +10,19 @@ echo ">>> Installing docker & docker-compose..."
 echo "+ Removing old versions (if any)"
 sudo dnf autoremove docker
 
-echo "+ Setting up the stable repository"
-curl -O https://download.docker.com/linux/fedora/docker-ce.repo
-# Waiting for official fedora 32 repo
-sed -i 's/$releasever/31/g' docker-ce.repo
-sudo mv docker-ce.repo /etc/yum.repos.d/
+# Enable old CGroups as docker still not support CgroupsV2
+sudo grubby --update-kernel=ALL --args="systemd.unified_cgroup_hierarchy=0"
 
-echo "+ Installing latest version of Docker Engine and containerd"
-sudo dnf install -y docker-ce docker-ce-cli containerd.io
+# Set up firewall
+sudo firewall-cmd --permanent --zone=trusted --add-interface=docker0
+sudo firewall-cmd --permanent --zone=FedoraWorkstation --add-masquerade
 
-echo "+ Installing latest version of docker-compose"
-sudo curl -L "https://github.com/docker/compose/releases/download/1.25.4/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
-sudo chmod +x /usr/local/bin/docker-compose
-sudo ln -sf /usr/local/bin/docker-compose /usr/bin/docker-compose
+# Install Moby, the open-source version of Docker
+sudo dnf install moby-engine docker-compose
+sudo systemctl enable docker
+
+# Runing without sudo
+sudo groupadd docker
 sudo usermod -aG docker $USER
 
 echo ">>> docker & docker-compose installed!"
