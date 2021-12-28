@@ -10,7 +10,8 @@ function create_backup () {
 
   if [[ -d "$1" ]]; then
     local -r no_slash="${1%/}"
-    cp -vr "${no_slash}" "$HOME/.backup/${no_slash}.$(date +'%Y-%m-%d.%H.%M.%S').bak"
+    mkdir -p "$HOME/.backup${no_slash}"
+    cp -vr "${no_slash}" "$HOME/.backup${no_slash}.$(date +'%Y-%m-%d.%H.%M.%S').bak"
   elif [[ -f "$1"  ]]; then
     cp -v "$1" "$HOME/.backup/${1}.$(date +'%Y-%m-%d.%H.%M.%S').bak"
   else
