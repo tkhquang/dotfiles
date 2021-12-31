@@ -23,13 +23,13 @@ ln -svfn ~/dotfiles/bin_common ~/bin_common
 
 ### /etc/profile.d/
 # Remove all broken symbolic links in the targer directory (if any)
-for file in /etc/profile.d/*.(local|sh); do
+for file in /etc/profile.d/*.local /etc/profile.d/*.sh; do
   if [[ -L "$file" ]] && ! [[ -e "$file" ]]; then
     sudo rm -v -- "$file"
   fi
 done
 # Create symlinks
-for file in $HOME/dotfiles/shell/system-wide/*.(local|sh); do
+for file in $HOME/dotfiles/shell/system-wide/*.local $HOME/dotfiles/shell/system-wide/*.sh; do
   sudo ln -svf "$file" "/etc/profile.d/${file##*/}"
 done
 

@@ -31,4 +31,8 @@ sudo dnf -y install gstreamer1-plugins-{bad-\*,good-\*,base} gstreamer1-plugin-o
 sudo dnf -y install lame\* --exclude=lame-devel
 sudo dnf group upgrade --with-optional Multimedia
 
+# Nvidia
+sudo dnf install akmod-nvidia
+sudo dnf install xorg-x11-drv-nvidia-cuda
+
 echo ">>> Some other packages installed!"
