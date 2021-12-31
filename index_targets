@@ -8,7 +8,6 @@
 .bash_profile
 .bashrc
 .inputrc
-.nvmrc
 .p10k.zsh
 .profile
 .tmux.conf

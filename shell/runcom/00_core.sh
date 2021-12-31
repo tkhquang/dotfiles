@@ -31,8 +31,5 @@ if [[ -z "$TMUX" ]]; then
   fi
 fi
 
-# nvm
-if ! has nvm; then
-  # Load nvm if it has not yet loaded
-  [[ -f "$NVM_DIR/nvm.sh" ]] && source "$NVM_DIR/nvm.sh"
-fi
+# asdf
+. $HOME/.asdf/asdf.sh

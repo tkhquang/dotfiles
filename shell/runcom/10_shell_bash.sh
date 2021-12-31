@@ -24,3 +24,8 @@ export HISTFILESIZE=$HISTSIZE
 if has fzf; then
   [[ -f /usr/share/fzf/shell/key-bindings.bash ]] && source /usr/share/fzf/shell/key-bindings.bash
 fi
+
+# asdf
+if has asdf; then
+  . $HOME/.asdf/completions/asdf.bash
+fi

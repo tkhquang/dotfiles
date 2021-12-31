@@ -14,7 +14,7 @@ fi
 
 # ----------------------------------------- #
 # Oh My Zsh {{{
-# A framework for managing zsh configuration                        
+# A framework for managing zsh configuration
 # https://github.com/ohmyzsh/ohmyzsh
 # ----------------------------------------- #
 
@@ -91,6 +91,12 @@ setopt share_history
 # fzf
 if has fzf; then
   [[ -f /usr/share/fzf/shell/key-bindings.zsh ]] && source /usr/share/fzf/shell/key-bindings.zsh
+fi
+
+# asdf
+if has asdf; then
+  fpath=(${ASDF_DIR}/completions $fpath)
+  autoload -Uz compinit && compinit
 fi
 
 # Fix slowness of pastes with zsh-syntax-highlighting.zsh

@@ -55,11 +55,6 @@ fi
 export EDITOR="$VISUAL"
 export SYSTEMD_EDITOR="$VISUAL"
 
-# nvm
-if [[ -z "$NVM_DIR" ]]; then
-  export NVM_DIR=$HOME/.nvm
-fi
-
 # ibus
 if has ibus; then
   export XMODIFIERS="@im=ibus"

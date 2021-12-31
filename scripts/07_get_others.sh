@@ -21,9 +21,6 @@ ln -svf ~/.vim ~/.config/nvim
 # Install tpm, the tmux plugin manager
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
-# Install yarn is for current user
-curl -o- -L https://yarnpkg.com/install.sh | bash
-
 # Enabling the RPM Fusion repositories
 sudo dnf -y install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm
 sudo dnf -y install https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
