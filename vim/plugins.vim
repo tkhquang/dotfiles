@@ -21,7 +21,7 @@ Plug 'junegunn/fzf.vim'
 
 " > Open in a floating or popup window
 if has("nvim-0.4.0") || has("patch-8.2.0191")
-  let g:fzf_layout = { 
+  let g:fzf_layout = {
     \ 'window': {
     \   'width': 0.9,
     \   'height': 0.7,
@@ -61,7 +61,7 @@ let g:fzf_action = {
   \ 'ctrl-v': 'vsplit'
   \ }
 
-" > Open the fuzzy finder just for the directory 
+" > Open the fuzzy finder just for the directory
 " containing the currently edited file (Sibling files)
 nnoremap <silent> <Leader>. :Files <C-r>=expand("%:h")<CR>/<CR>
 
@@ -357,7 +357,7 @@ if (has("autocmd") && !has("gui_running"))
     autocmd ColorScheme *
       \ call onedark#set_highlight("Normal", {
       \ "fg": {
-      \   "gui": "#ABB2BF", "cterm": "145", "cterm16" : "7" 
+      \   "gui": "#ABB2BF", "cterm": "145", "cterm16" : "7"
       \ } })
   augroup END
 endif
@@ -370,6 +370,7 @@ Plug 'vim-airline/vim-airline-themes'
 " vim-airline/vim-airline {{{
 " ------------------------------------------------- "
 
+let g:airline_powerline_fonts = 1
 let g:airline_theme='onedark'
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#bufferline#enabled = 1
@@ -397,4 +398,3 @@ call plug#end()
 endif
 
 colorscheme onedark
-
