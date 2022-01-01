@@ -163,7 +163,7 @@ function fcd() {
 }
 
 # [f]zf [g]rep [e]dit - Find File with Term and Edit
-# Fuzzy find a file, with colorful preview, that contains the supplied term, then once selected edit it in your preferred editor. 
+# Fuzzy find a file, with colorful preview, that contains the supplied term, then once selected edit it in your preferred editor.
 # Note, if your EDITOR is Vim or Neovim then you will be automatically scrolled to the selected line.
 function fge(){
   if [[ $# == 0 ]]; then
@@ -182,7 +182,7 @@ function fge(){
 }
 
 # [f]zf [kill] process - Find and Kill Process
-# Fuzzy find a process or group of processes, then SIGKILL them. 
+# Fuzzy find a process or group of processes, then SIGKILL them.
 # Multi-selection is enabled to allow multiple processes to be selected via the TAB key.
 # This script negates the need to run ps manually and all the related pain involved to kill a recalcitrant process
 function fkill() {

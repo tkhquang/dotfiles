@@ -26,9 +26,9 @@ bindkey "~~" reveal_alias_definition
 
 # Convert single-line command to multi-line one
 # https://github.com/bbkane/dotfiles/blob/master/bin_common/bin_common/format_shell_cmd.py
-# Bind to 'ff'
+# Bind to '~F'
 function format-shell-cmd() {
   BUFFER=$(echo "$BUFFER" | sed -e :a -e '/\\$/N; s/\\\n//; ta' | format_shell_cmd.py)
 }
 zle -N format-shell-cmd
-bindkey "ff" format-shell-cmd
+bindkey "~F" format-shell-cmd
