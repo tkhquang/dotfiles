@@ -31,5 +31,10 @@ if [[ -z "$TMUX" ]]; then
   fi
 fi
 
-# asdf
+### asdf
 . $HOME/.asdf/asdf.sh
+
+### ibus
+if has ibus-daemon; then
+  ibus-daemon -drxR
+fi
