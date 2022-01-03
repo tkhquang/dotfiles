@@ -13,8 +13,13 @@ while read target; do
   case $target in
     ''| \#*) continue ;;
   esac
-  if [[ -f "$HOME/dotfiles/$target" || -d "$HOME/dotfiles/$target" ]]; then
+  if [[ -f "$HOME/dotfiles/$target" ]]; then
     ln -svfn "$HOME/dotfiles/$target" "$HOME/$target"
+  elif [[ -d "$HOME/dotfiles/$target" ]]; then
+    mkdir -p "$HOME/$target/"
+    #TODO: Handle hidden files later
+    # For now, there are no hidden files so it's not a problem
+    ln -svfn "$HOME/dotfiles/$target/"* "$HOME/$target/"
   fi
 done < ~/dotfiles/index_targets
 

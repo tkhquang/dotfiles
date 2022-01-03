@@ -25,3 +25,9 @@ For migration references only.
 7. Steam
 8. [Change Lockscreen
    format](https://askubuntu.com/questions/783184/how-to-display-kde-lock-screen-time-in-24-hour-format#comment1729228_784181)
+
+## TODO
+
+- [ ] Replace Tilix with Kitty
+- [ ] Install scripts for Darwin
+- [ ] Move Firefox's userChome to dotfiles

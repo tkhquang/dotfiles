@@ -2,7 +2,6 @@
 ### ~ $HOME
 
 # Files
-.config/nvim/init.vim
 .bash_login
 .bash_logout
 .bash_profile
@@ -19,5 +18,8 @@
 .zshrc
 
 # Directories
+bin_common
+.config/nvim
 .config/bat
 .config/vivid
+.config/kitty
