@@ -625,7 +625,7 @@ if has('nvim')
         exec "buffer ".s:term_buf
         exec "bd terminal"
       catch
-        call termopen($SHELL, {"detach": 0})
+        call termopen("$SHELL -l", {"detach": 0})
         let s:term_buf = bufnr("")
         setlocal nonu nornu scl=no nocul
       endtry
