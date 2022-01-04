@@ -50,7 +50,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 #   https://github.com/pygments/pygments
 #   https://github.com/alecthomas/chroma
 ZSH_COLORIZE_TOOL=pygmentize
-ZSH_COLORIZE_STYLE="solarized-dark"
+ZSH_COLORIZE_STYLE="one-dark"
 
 source $ZSH/oh-my-zsh.sh
 
