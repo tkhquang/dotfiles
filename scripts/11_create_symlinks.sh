@@ -8,23 +8,40 @@ set -euf -o pipefail
 echo ">>> Creating symlinks for the dotfiles..."
 
 # List of files located in ~/dotfiles/index_targets
+# Remove all broken symbolic links in the targer directory (if any)
 while read target; do
   # Skip blank lines and lines starting with '#'
   case $target in
-    ''| \#*) continue ;;
+  '' | \#*) continue ;;
+  esac
+  if [[ -f "$HOME/$target" ]]; then
+    if [[ -L $HOME/$target ]] && ! [[ -e $HOME/$target ]]; then
+      rm -v -- $HOME/$target
+    fi
+  elif [[ -d "$HOME/$target" ]]; then
+    for file in "$HOME/$target"/*; do
+      if [[ -L "$file" ]] && ! [[ -e "$file" ]]; then
+        rm -v -- "$file"
+      fi
+    done
+  fi
+done <~/dotfiles/index_targets
+
+# List of files located in ~/dotfiles/index_targets
+while read target; do
+  # Skip blank lines and lines starting with '#'
+  case $target in
+  '' | \#*) continue ;;
   esac
   if [[ -f "$HOME/dotfiles/$target" ]]; then
     ln -svfn "$HOME/dotfiles/$target" "$HOME/$target"
   elif [[ -d "$HOME/dotfiles/$target" ]]; then
     mkdir -p "$HOME/$target/"
-    #TODO: Handle hidden files later
+    # TODO: Handle hidden files later
     # For now, there are no hidden files so it's not a problem
-    ln -svfn "$HOME/dotfiles/$target/"* "$HOME/$target/"
+    ln -svfn "$HOME/dotfiles/$target/"* "$HOME/$target"
   fi
-done < ~/dotfiles/index_targets
-
-# Custom bin
-ln -svfn ~/dotfiles/bin_common ~/bin_common
+done <~/dotfiles/index_targets
 
 ### /etc/profile.d/
 # Remove all broken symbolic links in the targer directory (if any)

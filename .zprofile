@@ -10,6 +10,11 @@
 #   e.g. `SCONSFLAGS="--jobs=$(( $(nproc) - 1 ))"`)
 #   as it may take some time to execute.
 
+
+if [[ -f ~/dotfiles/shell/os/darwin.sh ]]; then
+  source ~/dotfiles/shell/os/darwin.sh
+fi
+
 if [[ -f ~/dotfiles/shell/env-var/variables.sh ]]; then
   source ~/dotfiles/shell/env-var/variables.sh
 fi

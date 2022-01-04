@@ -48,4 +48,25 @@ EOF
 # EndSection
 # EOF
 
+# OS specific settings for kitty
+# As include {ENV}.conf doesn't seem to work with OSX Launchpad
+case "$(uname)" in
+  Darwin)
+    sh -c "echo 'font_size 12.0
+
+map cmd+c copy_to_clipboard
+map cmd+v paste_from_clipboard
+map shift+insert paste_from_clipboard' >> ~/dotfiles/.config/kitty/os.conf"
+    ;;
+  Linux)
+    sh -c "echo 'font_size 10.0
+
+map ctrl+c copy_to_clipboard
+map ctrl+v paste_from_clipboard
+map shift+insert paste_from_clipboard' >> ~/dotfiles/.config/kitty/os.conf"
+    ;;
+  *)
+    ;;
+esac
+
 echo ">>> Done!"

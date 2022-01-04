@@ -6,11 +6,6 @@
 # Not in bash?
 [[ -z "$BASH_VERSION" ]] && return
 
-# Source global definitions
-if [ -f /etc/bashrc ]; then
-  . /etc/bashrc
-fi
-
 # Case-insensitive globbing (used in pathname expansion)
 shopt -s nocaseglob
 
@@ -27,5 +22,7 @@ fi
 
 # asdf
 if has asdf; then
-  . $HOME/.asdf/completions/asdf.bash
+  if [[ -f $HOME/.asdf/completions/asdf.bash ]]; then
+    . $HOME/.asdf/completions/asdf.bash
+  fi
 fi

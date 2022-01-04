@@ -8,7 +8,7 @@
 # ----------------------------------------- #
 
 # Reload the shell (i.e. invoke as a login shell)
-function reload_as_login_shell () {
+function reload_as_login_shell() {
   # Reload Tmux config if currently inside Tmux
   if [[ -n "$TMUX" ]] && [[ "$TERM" =~ ^(screen|tmux).*$ ]]; then
     tmux source-file ~/.tmux.conf \; display "Reloaded!"
@@ -22,7 +22,7 @@ function bak() {
     # https://stackoverflow.com/a/9018877/2958070
     local -r no_slash="${1%/}"
     cp -r "${no_slash}" "${no_slash}.$(date +'%Y-%m-%d.%H.%M.%S').bak"
-  elif [[ -f "$1"  ]]; then
+  elif [[ -f "$1" ]]; then
     cp "$1" "${1}.$(date +'%Y-%m-%d.%H.%M.%S').bak"
   else
     echo "Only files and directories supported"
@@ -80,13 +80,13 @@ function list_file_by_size() {
 
   if has fd; then
     fd \
-    --type f \
-    --color=never \
-    --hidden \
-    --no-ignore-vcs \
-    --exclude "{.git,node_modules,*.pyc}" \
-    --size "$@" \
-    --exec-batch "$ls_cmd" -la {} \;
+      --type f \
+      --color=never \
+      --hidden \
+      --no-ignore-vcs \
+      --exclude "{.git,node_modules,*.pyc}" \
+      --size "$@" \
+      --exec-batch "$ls_cmd" -la {} \;
   else
     find \
       -type f \
@@ -104,7 +104,7 @@ function list_file_by_size() {
 }
 
 # List aliases with highlighting if available
-function list_aliases () {
+function list_aliases() {
   if has bat; then
     alias "$@" | bat -l bash --style=plain
   else
@@ -113,7 +113,7 @@ function list_aliases () {
 }
 
 # List environment variables with highlighting if available
-function list_env () {
+function list_env() {
   if has bat; then
     env | bat -l bash --style=plain
   else
@@ -139,8 +139,8 @@ function list_env () {
 function ffe() {
   local file=$(
     fzf --query="$1" --no-multi --select-1 --exit-0 \
-        --preview 'bat --color=always --line-range :500 {}'
-    )
+      --preview 'bat --color=always --line-range :500 {}'
+  )
   if [[ -n $file ]]; then
     $EDITOR "$file"
   fi
@@ -153,10 +153,10 @@ function ffe() {
 # - If no directories match then exit immediately
 function fcd() {
   local directory=$(
-    fd --type d | \
-    fzf --query="$1" --no-multi --select-1 --exit-0 \
+    fd --type d |
+      fzf --query="$1" --no-multi --select-1 --exit-0 \
         --preview 'tree -C {} | head -100'
-    )
+  )
   if [[ -n $directory ]]; then
     cd "$directory"
   fi
@@ -165,7 +165,7 @@ function fcd() {
 # [f]zf [g]rep [e]dit - Find File with Term and Edit
 # Fuzzy find a file, with colorful preview, that contains the supplied term, then once selected edit it in your preferred editor.
 # Note, if your EDITOR is Vim or Neovim then you will be automatically scrolled to the selected line.
-function fge(){
+function fge() {
   if [[ $# == 0 ]]; then
     echo 'Error: search term was not provided.'
     return
@@ -173,8 +173,8 @@ function fge(){
   local match=$(
     rg --color=always --line-number --column "$1" |
       fzf --no-multi --delimiter : \
-          --preview "~/.vim/plugged/fzf.vim/bin/preview.sh {}"
-    )
+        --preview "~/.vim/plugged/fzf.vim/bin/preview.sh {}"
+  )
   local file=$(echo "$match" | cut -d':' -f1)
   if [[ -n $file ]]; then
     $EDITOR "$file" +$(echo "$match" | cut -d':' -f2)
@@ -187,10 +187,10 @@ function fge(){
 # This script negates the need to run ps manually and all the related pain involved to kill a recalcitrant process
 function fkill() {
   local pid_col
-  if [[ $OS = Linux ]]; then
+  if [[ $UNAME = Linux ]]; then
     pid_col=2
-  elif [[ $OS = Darwin ]]; then
-    pid_col=3;
+  elif [[ $UNAME = Darwin ]]; then
+    pid_col=3
   else
     echo 'Error: unknown platform'
     return
@@ -208,13 +208,13 @@ function fkill() {
 # Note, modified and untracked files will be listed for staging.
 function fga() {
   local selections=$(
-    git status --porcelain | \
-    fzf --preview 'if (git ls-files --error-unmatch {2} &>/dev/null); then
+    git status --porcelain |
+      fzf --preview 'if (git ls-files --error-unmatch {2} &>/dev/null); then
         git diff --color=always {2}
       else
         bat --color=always --line-range :500 {2}
       fi'
-    )
+  )
   if [[ -n $selections ]]; then
     git add --verbose $(echo "$selections" | cut -c 4- | tr '\n' ' ')
   fi
@@ -228,9 +228,9 @@ function fgl() {
   local selections=$(
     git log --graph --format="%C(yellow)%h%C(red)%d%C(reset) - %C(bold green)(%ar)%C(reset) %s %C(blue)<%an>%C(reset)" --color=always "$@" |
       fzf --no-sort --height 100% \
-          --preview "echo {} | grep -o '[a-f0-9]\{7\}' | head -1 | \
+        --preview "echo {} | grep -o '[a-f0-9]\{7\}' | head -1 | \
                       xargs -I@ sh -c 'git show --color=always @'"
-    )
+  )
   if [[ -n $selections ]]; then
     local commits=$(echo "$selections" | cut -d' ' -f2 | tr --delete '\n' | tr '\n' ' ')
     git show $commits
@@ -244,8 +244,8 @@ function fgr() {
   local selection=$(
     git reflog --color=always "$@" |
       fzf --no-multi --ansi --no-sort --height 100% \
-          --preview "git show --color=always {1}"
-    )
+        --preview "git show --color=always {1}"
+  )
   if [[ -n $selection ]]; then
     git show $(echo $selection | cut -d' ' -f1)
   fi
@@ -262,8 +262,8 @@ function fglp() {
   local selections=$(
     git log --oneline --color=always -S "$@" |
       fzf --ansi --no-sort --height 100% \
-          --preview "git show --color=always {1}"
-    )
+        --preview "git show --color=always {1}"
+  )
   if [[ -n $selections ]]; then
     local commits=$(echo "$selections" | cut -d' ' -f1 | tr '\n' ' ')
     git show $commits

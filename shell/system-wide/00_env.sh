@@ -71,7 +71,4 @@ if [[ -z "$TMPDIR" ]]; then
   export TMPDIR="/tmp"
 fi
 
-# What platform are we running on
-export OS=$(uname)
-
 # }}}

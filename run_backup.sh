@@ -7,7 +7,9 @@ echo ">>> Commit to git..."
 git pull origin master
 
 # Back up current Tilix configs
-dconf dump /com/gexperts/Tilix/ > tilix.dconf
+if [ -x "$(command -v tilix)" ]; then
+  dconf dump /com/gexperts/Tilix/ > tilix.dconf
+fi
 
 git add .
 git commit -m "Backup at $(date)"

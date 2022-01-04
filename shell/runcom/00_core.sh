@@ -20,8 +20,11 @@ if [[ -z "$TMUX" ]]; then
   if [ $client_cnt -ge 1 ]; then
     local client_id=0
     local session_name=$base_session"-"$client_id
-    while [ $(tmux has-session -t $session_name 2>& /dev/null; echo $?) -ne 1 ]; do
-      client_id=$((client_id+1))
+    while [ $(
+      tmux has-session -t $session_name 2>&/dev/null
+      echo $?
+    ) -ne 1 ]; do
+      client_id=$((client_id + 1))
       session_name=$base_session"-"$client_id
     done
     tmux new-session -t $base_session -s $session_name -d
@@ -32,7 +35,9 @@ if [[ -z "$TMUX" ]]; then
 fi
 
 ### asdf
-. $HOME/.asdf/asdf.sh
+if [[ -f $HOME/.asdf/asdf.sh ]]; then
+  . $HOME/.asdf/asdf.sh
+fi
 
 ### ibus
 if has ibus-daemon; then

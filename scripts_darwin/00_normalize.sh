@@ -1,22 +1,15 @@
 #!/bin/bash
 # ========================================= #
-# MacOS related stuff                       #
+# Normalize MacOS related stuff             #
 # ========================================= #
 
 set -euf -o pipefail
 
 [[ "$(uname)" != Darwin ]] && return
 
-# Force Darwin to use /etc/profile.d
-sudo tee -a /etc/profile > /dev/null <<EOT
+# brew install wget
 
-for i in /etc/profile.d/*.sh /etc/profile.d/sh.local ; do
-  if [ -r "\$i" ]; then
-      if [ "\${-#*i}" != "\$-" ]; then
-        . "\$i"
-      else
-        . "\$i" >/dev/null
-      fi
-  fi
-done
-EOT
+# brew tap homebrew/cask-fonts
+# brew install --cask font-hack-nerd-font
+
+# brew install kitty neovim ripgrep bat tmux fzf exa

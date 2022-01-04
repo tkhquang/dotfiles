@@ -13,7 +13,8 @@ function create_backup () {
     mkdir -p "$HOME/.backup${no_slash}"
     cp -vr "${no_slash}" "$HOME/.backup${no_slash}.$(date +'%Y-%m-%d.%H.%M.%S').bak"
   elif [[ -f "$1"  ]]; then
-    cp -v "$1" "$HOME/.backup/${1}.$(date +'%Y-%m-%d.%H.%M.%S').bak"
+    mkdir -p "$HOME/.backup${1}"
+    cp -v "$1" "$HOME/.backup${1}.$(date +'%Y-%m-%d.%H.%M.%S').bak"
   else
     echo "Only files and directories supported"
   fi
@@ -29,6 +30,10 @@ while read target; do
     create_backup "$HOME/$target"
   fi
 done < ~/dotfiles/index_targets
+
+if [[ -d /etc/profile ]]; then
+  create_backup "/etc/profile"
+fi
 
 if [[ -d /etc/profile.d ]]; then
   create_backup "/etc/profile.d"
