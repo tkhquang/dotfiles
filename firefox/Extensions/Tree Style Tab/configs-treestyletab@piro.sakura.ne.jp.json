@@ -1,0 +1,50 @@
+{
+  "autoAttach": false,
+  "autoAttachOnAnyOtherTrigger": 0,
+  "autoAttachOnDuplicated": 0,
+  "autoAttachOnNewTabButtonAccelClick": 0,
+  "autoAttachOnNewTabButtonMiddleClick": 0,
+  "autoAttachOnNewTabCommand": 0,
+  "autoAttachOnOpenedFromExternal": 0,
+  "autoAttachSameSiteOrphan": 0,
+  "autoGroupNewTabsFromBookmarks": false,
+  "autoGroupNewTabsFromPinned": false,
+  "chunkedUserStyleRules0": "LyogU2hvdyB0aXRsZSBvZiB1bnJlYWQgdGFicyB3aXRoIHJlZCBhbmQgaXRhbGljIGZvbnQgKi8KLyoKOnJvb3Quc2lkZWJhciB0YWItaXRlbS51bnJlYWQgLmxhYmVsLWNvbnRlbnQgewogIGNvbG9yOiByZWQgIWltcG9ydGFudDsKICBmb250LXN0eWxlOiBpdGFsaWMgIWltcG9ydGFudDsKfQoqLwoKLyogQWRkIHByaXZhdGUgYnJvd3NpbmcgaW5kaWNhdG9yIHBlciB0YWIgKi8KLyoKOnJvb3Quc2lkZWJhciB0YWItaXRlbS5wcml2YXRlLWJyb3dzaW5nIHRhYi1sYWJlbDpiZWZvcmUgewogIGNvbnRlbnQ6ICLwn5W2IjsKfQoqLwovKgogIFVzZSB3aXRoIFBsYWluIERhcmsgdGhlbWUKICBVc2Ugd2l0aCBgaW5kZXBlbmRlbnQgdGFic2Agc2V0dGluZ3MgKG5vIHRyZWUgc3RydWN0dXJlKQogIFB1dCB0aGlzIGluIHRoZSBhZGQtb24gb3B0aW9uIHNldHRpbmdzCiovCgpAa2V5ZnJhbWVzIHB1bHNlIHsKICAwJSB7CiAgICB3aWR0aDogMHB4OwogICAgaGVpZ2h0OiAwcHg7CiAgICBvcGFjaXR5OiAxOwogIH0KICAxMDAlIHsKICAgIHdpZHRoOiAzNTBweDsKICAgIGhlaWdodDogMzUwcHg7CiAgICBvcGFjaXR5OiAwOwogICAgdG9wOiBjYWxjKDUwJSAtIDE3NXB4KTsKICAgIGxlZnQ6IGNhbGMoNTAlIC0gMTc1cHgpOwogIH0KfQoKLyogSGlkZSAudHdpc3R5IGFuZCBhZGp1c3QgbWFyZ2lucy4gKi8KLnRhYiAudHdpc3R5IHsKICB2aXNpYmlsaXR5OiBoaWRkZW47CiAgbWFyZ2luLWxlZnQ6IC0xMnB4Owp9CgovKiBQdXNoIHRhYiBsYWJlbHMgc2xpZ2h0bHkgdG8gdGhlIHJpZ2h0LiAqLwoudGFiIC5sYWJlbCB7CiAgbWFyZ2luLWxlZnQ6IDdweDsKfQoKLyogQWRqdXN0IG5ld3RhYiBidXR0b24gc28gaXQgbG9va3MgbW9yZSBiYWxhbmNlZCAqLwoubmV3dGFiLWJ1dHRvbiB7CiAgcGFkZGluZy1sZWZ0OiA1cHggIWltcG9ydGFudDsKICBwYWRkaW5nLXRvcDogM3B4ICFpbXBvcnRhbnQ7Cn0KCi8qIEFkanVzdCBzdHlsZSBmb3IgdGFiIHRoYXQgaGFzIHNvdW5kIHBsYXlpbmcuICovCi50YWIuc291bmQtcGxheWluZyAuZmF2aWNvbjo6YWZ0ZXIgewogIGNvbnRlbnQ6ICIiOwogIHBvc2l0aW9uOiBhYnNvbHV0ZTsKICB0b3A6IDUwJTsKICBsZWZ0OiA1MCU7CiAgYm9yZGVyLXJhZGl1czogNTAlOwogIGJhY2tncm91bmQ6ICMyYWQ2MmE7CiAgYW5pbWF0aW9uOiBwdWxzZSAycyBlYXNlLW91dCAwcyBpbmZpbml0ZTsKICB6LWluZGV4OiAtMTsKICBvcGFjaXR5OiAwOwp9CgovKiBBZGp1c3Qgc3R5bGUgZm9yIHRhYiB0aGF0IGlzIG11dGVkLiAqLwoudGFiLm11dGVkIHsKICBvcGFjaXR5OiAwLjU7Cn0KCi8qIEFkanVzdCBzdHlsZSBmb3IgdGFiIHRoYXQgaXMgdW5yZWFkLiAqLwoudGFiLnVucmVhZCB7CiAgYmFja2dyb3VuZC1jb2xvcjogcmdiYSgyNTUsIDAsIDAsIDAuMyk7Cn0KLnRhYi51bnJlYWQgLmxhYmVsIHsKICBmb250LXN0eWxlOiBpdGFsaWM7Cn0KCi8qIEZvcmNlIGl0cyBzdGF0ZSB0byAnc2Nyb2xsJywgYWRqdXN0IG1hcmdpbi1sZWZ0IGZvciB3aWR0aCBvZiBzY3JvbGxiYXIuICovCiN0YWJiYXIgewogIHRyYW5zaXRpb246IG1hcmdpbi1sZWZ0IDAuM3MgZWFzZSAhaW1wb3J0YW50OwogIG92ZXJmbG93LXk6IHNjcm9sbDsKICAvKgogICAgYHNjcm9sbGJhci13aWR0aDogYXV0b2A6IC0xMnB4CiAgICBgc2Nyb2xsYmFyLXdpZHRoOiB0aGluYDogLTZweAogICovCiAgbWFyZ2luLWxlZnQ6IC0xMnB4OwoKICAvKgogICAgTm90ZSB0aGF0IHRoZSBiZWxvdyB3aWxsIGJlIG92ZXJyaWRlIGlmIHlvdSBoYXZlIGEgVW5pdmVyc2FsIFN0eWxpbmcgZm9yIHNjcm9sbGJhcnMgdXNpbmcgQ1NTIFNjcm9sbGJhcnMgcHJvcGVydGllczoKICAgIGh0dHBzOi8vZGV2ZWxvcGVyLm1vemlsbGEub3JnL2VuLVVTL2RvY3MvV2ViL0NTUy9DU1NfU2Nyb2xsYmFycwogICovCiAgc2Nyb2xsYmFyLXdpZHRoOiBhdXRvOwogIHNjcm9sbGJhci1jb2xvcjogIzAwNTVhYSAjMjUyNTI1Owp9CgovKiBPbmx5IHNob3dzIHNjcm9sbGJhciBvbiBob3ZlcmluZyAqLwojdGFiYmFyLm92ZXJmbG93OmhvdmVyIHsKICBtYXJnaW4tbGVmdDogMDsKfQoKLyogSSBub3RpY2Ugd2hpbGUgcGxheWluZyBtdXNpYyBvbiBTcG90aWZ5IHRoZSBmYXZpY29uJ3MgY29sb3IgZG9lc24ndCBsb29rIHJpZ2h0ICovCi50YWJbZGF0YS1jdXJyZW50LXVyaSo9InNwb3RpZnkuY29tIl0uc291bmQtcGxheWluZyAuZmF2aWNvbjo6YWZ0ZXIgewogIGZpbHRlcjogaW52ZXJ0KDEwMCUpOwp9",
+  "configsVersion": 25,
+  "context_openAllBookmarksWithStructure": false,
+  "guessNewOrphanTabAsOpenedByNewTabCommand": false,
+  "iconColor": "dark",
+  "inheritContextualIdentityToSameSiteOrphanMode": 0,
+  "insertDroppedTabsAt": -2,
+  "insertNewChildAt": -1,
+  "insertNewTabFromPinnedTabAt": -1,
+  "maxTreeLevel": 0,
+  "notifiedFeaturesVersion": 9,
+  "optionsExpandedGroups": [
+    "group-logFor",
+    "group-allConfigs"
+  ],
+  "optionsExpandedSections": [
+    "section-appearance",
+    "section-newTab",
+    "section-contextMenu",
+    "section-treeBehavior",
+    "section-debug",
+    "section-advanced",
+    "section-drag"
+  ],
+  "renderTreeInGroupTabs": false,
+  "showExpertOptions": true,
+  "style": "photon",
+  "syncDevices": {
+    "device-1640712591289-38153": {
+      "id": "device-1640712591289-38153",
+      "name": "Firefox on Linux",
+      "icon": "device-desktop",
+      "timestamp": 1641315354096
+    }
+  },
+  "syncParentTabAndOpenerTab": false,
+  "userStyleRules": "",
+  "userStyleRulesFieldHeight": "133.33334350585938px"
+}
