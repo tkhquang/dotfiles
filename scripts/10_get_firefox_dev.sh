@@ -9,7 +9,8 @@ sudo mkdir -p /opt/firefox-developer/
 
 curl -L "https://download.mozilla.org/?product=firefox-devedition-latest-ssl&os=linux64&lang=en-US" | sudo tar --strip-components 1 -jxp -C /opt/firefox-developer/
 
-sudo sh -c "echo '[Desktop Entry]
+cat << EOF | sudo tee /firefox-developer-edition.desktop
+[Desktop Entry]
 Version=1.0
 Name=Firefox Developer Edition
 GenericName=Web Browser
@@ -19,7 +20,8 @@ Icon=/opt/firefox-developer/browser/chrome/icons/default/default128.png
 Type=Application
 Categories=Network;WebBrowser;Favorites;
 MimeType=text/html;text/xml;application/xhtml_xml;x-scheme-handler/http;x-scheme-handler/https;x-scheme-handler/ftp;
-X-Ayatana-Desktop-Shortcuts=NewWindow;NewIncognito' >> /usr/share/applications/firefox-developer-edition.desktop"
+X-Ayatana-Desktop-Shortcuts=NewWindow;NewIncognito
+EOF
 
 # Create Symlink
 # For launching Firefox from a CommandLineInterface
@@ -32,4 +34,3 @@ sudo chown -R $USER:$USER /opt/firefox-developer
 # https://github.com/xiaoxiaoflood/firefox-scripts
 
 echo ">>> Firefox Developer Edition installed!"
-
