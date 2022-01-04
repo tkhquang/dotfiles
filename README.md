@@ -31,3 +31,4 @@ For migration references only.
 - [ ] Replace Tilix with Kitty
 - [ ] Install scripts for Darwin
 - [ ] Move Firefox's userChome to dotfiles
+- [ ] Resolve mapping conflict in vimrc
