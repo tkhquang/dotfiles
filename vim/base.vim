@@ -91,7 +91,7 @@ set scrolloff=1
 set sidescrolloff=5
 
 " > Show 'invisible' characters
-" ▶ ◀ » « › ‹ ◥ ❮ ❯ ↪ ↲ ⏎ ¶ ␣ ⎵ • ×
+" ▶ ◀ » « › ‹ ◥ ❮ ❯ ↪ ↲ ⏎ ¶ ␣ ⎵ • · ×
 " ★ ‡ § │ ⍿ ¤ → ← … ░ ⣿ ▓ ░ ␠ ○ ⦸
 set showbreak=↪\
 set list
@@ -99,7 +99,7 @@ set listchars=eol:↲
 set listchars+=extends:…
 set listchars+=nbsp:␣
 set listchars+=precedes:…
-set listchars+=space:⎵
+set listchars+=space:·
 set listchars+=tab:⍿\ " Preserved whitepsace
 set listchars+=trail:×
 

@@ -79,6 +79,7 @@ nnoremap <Leader>rg :Rg<Space>
 Plug 'pangloss/vim-javascript'
 Plug 'leafgarland/typescript-vim'
 Plug 'peitalin/vim-jsx-typescript'
+Plug 'neoclide/vim-jsx-improve'
 Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
 Plug 'jparise/vim-graphql'
 " autocmd BufEnter *.{js,jsx,ts,tsx} :syntax sync fromstart
