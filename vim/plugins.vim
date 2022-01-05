@@ -13,6 +13,7 @@ endif
 silent! if plug#begin('~/.vim/plugged')
 
 Plug 'sheerun/vim-polyglot'
+
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 " ------------------------------------------------- "
@@ -76,15 +77,6 @@ nnoremap <Leader>rg :Rg<Space>
 
 " }}}
 
-Plug 'pangloss/vim-javascript'
-Plug 'leafgarland/typescript-vim'
-Plug 'peitalin/vim-jsx-typescript'
-Plug 'neoclide/vim-jsx-improve'
-Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
-Plug 'jparise/vim-graphql'
-" autocmd BufEnter *.{js,jsx,ts,tsx} :syntax sync fromstart
-" autocmd BufLeave *.{js,jsx,ts,tsx} :syntax sync clear
-
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " ------------------------------------------------- "
 " neoclide/coc.nvim {{{
@@ -101,6 +93,7 @@ let g:coc_global_extensions = [
 \ ]
 " :CocInstall coc-eslint
 " :CocInstall coc-prettier
+" :CocInstall coc-styled-components
 if isdirectory('./node_modules') && isdirectory('./node_modules/prettier')
   let g:coc_global_extensions += ['coc-prettier']
 endif
