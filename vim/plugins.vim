@@ -76,6 +76,14 @@ nnoremap <Leader>rg :Rg<Space>
 
 " }}}
 
+Plug 'pangloss/vim-javascript'
+Plug 'leafgarland/typescript-vim'
+Plug 'peitalin/vim-jsx-typescript'
+Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
+Plug 'jparise/vim-graphql'
+autocmd BufEnter *.{js,jsx,ts,tsx} :syntax sync fromstart
+autocmd BufLeave *.{js,jsx,ts,tsx} :syntax sync clear
+
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " ------------------------------------------------- "
 " neoclide/coc.nvim {{{
@@ -87,8 +95,18 @@ let g:coc_global_extensions = [
     \ 'coc-html',
     \ 'coc-emmet',
     \ 'coc-css',
-    \ 'coc-python'
+    \ 'coc-python',
+    \ 'coc-tsserver'
 \ ]
+" :CocInstall coc-eslint
+" :CocInstall coc-prettier
+if isdirectory('./node_modules') && isdirectory('./node_modules/prettier')
+  let g:coc_global_extensions += ['coc-prettier']
+endif
+
+if isdirectory('./node_modules') && isdirectory('./node_modules/eslint')
+  let g:coc_global_extensions += ['coc-eslint']
+endif
 
 " > Use <tab> for trigger completion and navigate to the next complete item
 function! s:check_back_space() abort
@@ -120,6 +138,8 @@ command! -nargs=? Fold   :call CocAction('fold', <f-args>)
 " > Add `:OR` command for organize imports of the current buffer.
 command! -nargs=0 OR     :call CocAction('runCommand', 'editor.action.organizeImport')
 
+nmap <Leader>F :Format<CR>
+
 " }}}
 
 Plug 'dense-analysis/ale'
@@ -129,7 +149,10 @@ Plug 'dense-analysis/ale'
 
 let g:ale_linters = {
 \  'css':        ['csslint'],
-\  'javascript': ['standard'],
+\  'javascript': ['prettier', 'eslint'],
+\  'javascriptreact': ['prettier', 'eslint'],
+\  'typescript': ['prettier', 'eslint'],
+\  'typescriptreact': ['prettier', 'eslint'],
 \  'json':       ['jsonlint'],
 \  'ruby':       ['standardrb'],
 \  'scss':       ['sasslint'],
@@ -138,7 +161,10 @@ let g:ale_linters = {
 
 let g:ale_fixers = {
 \  'css':        ['prettier'],
-\  'javascript': ['prettier-standard'],
+\  'javascript': ['prettier', 'eslint'],
+\  'javascriptreact': ['prettier', 'eslint'],
+\  'typescript': ['prettier', 'eslint'],
+\  'typescriptreact': ['prettier', 'eslint'],
 \  'json':       ['prettier'],
 \  'ruby':       ['standardrb'],
 \  'scss':       ['prettier'],
@@ -157,9 +183,9 @@ let g:ale_lint_on_insert_leave     = 0
 let g:ale_lint_on_save             = 1
 let g:ale_lint_on_text_changed     = 'never'
 
-nmap <Leader>l    <Plug>(ale_lint)
-nmap <Leader>f    <Plug>(ale_fix)
-nmap <Leader><BS> <Plug>(ale_reset_buffer)
+" nmap <Leader>L    <Plug>(ale_lint)
+" nmap <Leader>F    <Plug>(ale_fix)
+" nmap <Leader><BS> <Plug>(ale_reset_buffer)
 
 " }}}
 
@@ -171,8 +197,8 @@ Plug 'tpope/vim-fugitive'
 let g:fzf_commits_log_options = '--graph --color=always
   \ --format="%C(yellow)%h%C(red)%d%C(reset)
   \ - %C(bold green)(%ar)%C(reset) %s %C(blue)<%an>%C(reset)"'
-
-nnoremap <silent> <Leader>b  :Gblame<CR>
+set diffopt+=vertical
+nnoremap <silent> <Leader>b  :Git blame<CR>
 nnoremap <silent> <Leader>d  :Gdiff<CR>
 nnoremap <silent> <Leader>c  :Commits<CR>
 nnoremap <silent> <Leader>bc :BCommits<CR>

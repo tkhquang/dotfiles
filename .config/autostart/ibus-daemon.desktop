@@ -1,0 +1,19 @@
+[Desktop Entry]
+Comment[en_US]=
+Comment=
+Exec=/usr/bin/ibus-daemon -drxR
+GenericName[en_US]=
+GenericName=
+Icon=
+MimeType=
+Name[en_US]=ibus-daemon
+Name=ibus-daemon
+Path=
+StartupNotify=true
+Terminal=false
+TerminalOptions=
+Type=Application
+X-DBUS-ServiceName=
+X-DBUS-StartupType=
+X-KDE-SubstituteUID=false
+X-KDE-Username=

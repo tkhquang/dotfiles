@@ -41,8 +41,3 @@ fi
 if has brew; then
   . $(brew --prefix asdf)/libexec/asdf.sh
 fi
-
-### ibus
-if has ibus-daemon; then
-  ibus-daemon -drxR
-fi

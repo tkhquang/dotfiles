@@ -18,8 +18,9 @@
 .zshrc
 
 # Directories
-bin_common
-.config/nvim
+.config/autostart
 .config/bat
-.config/vivid
 .config/kitty
+.config/nvim
+.config/vivid
+bin_common
