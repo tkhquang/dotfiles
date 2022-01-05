@@ -81,8 +81,8 @@ Plug 'leafgarland/typescript-vim'
 Plug 'peitalin/vim-jsx-typescript'
 Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
 Plug 'jparise/vim-graphql'
-autocmd BufEnter *.{js,jsx,ts,tsx} :syntax sync fromstart
-autocmd BufLeave *.{js,jsx,ts,tsx} :syntax sync clear
+" autocmd BufEnter *.{js,jsx,ts,tsx} :syntax sync fromstart
+" autocmd BufLeave *.{js,jsx,ts,tsx} :syntax sync clear
 
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " ------------------------------------------------- "
@@ -183,9 +183,9 @@ let g:ale_lint_on_insert_leave     = 0
 let g:ale_lint_on_save             = 1
 let g:ale_lint_on_text_changed     = 'never'
 
-" nmap <Leader>L    <Plug>(ale_lint)
-" nmap <Leader>F    <Plug>(ale_fix)
-" nmap <Leader><BS> <Plug>(ale_reset_buffer)
+nmap <Leader>aL    <Plug>(ale_lint)
+nmap <Leader>aF    <Plug>(ale_fix)
+nmap <Leader><BS> <Plug>(ale_reset_buffer)
 
 " }}}
 
@@ -384,6 +384,11 @@ if (has("autocmd") && !has("gui_running"))
       \ call onedark#set_highlight("Normal", {
       \ "fg": {
       \   "gui": "#ABB2BF", "cterm": "145", "cterm16" : "7"
+      \ } })
+    autocmd ColorScheme *
+      \ call onedark#extend_highlight("NonText", {
+      \ "fg": {
+      \   "gui": "#626262", "cterm": "241", "cterm16" : "2"
       \ } })
   augroup END
 endif

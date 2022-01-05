@@ -18,6 +18,7 @@
 .zshrc
 
 # Directories
+# Only the files inside will be symlinked
 .config/autostart
 .config/bat
 .config/kitty
