@@ -13,3 +13,5 @@ set -euf -o pipefail
 # brew install --cask font-hack-nerd-font
 
 # brew install kitty neovim ripgrep bat tmux fzf exa
+# brew install fd
+# brew install gawk
