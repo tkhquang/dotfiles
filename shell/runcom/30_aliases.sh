@@ -159,6 +159,10 @@ if ! has pbcopy; then
   alias pbcopy="xclip -selection clipboard"
   alias pbpaste="xclip -selection clipboard -o"
 fi
+# if [ $+commands[xclip] ]; then
+#   alias pbcopy='xclip -selection clipboard -in'
+#   alias pbpaste='xclip -selection clipboard -out'
+# fi
 
 # Normalize `open` across Linux, macOS, and Windows.
 # This is needed to make the `o` function cross-platform.

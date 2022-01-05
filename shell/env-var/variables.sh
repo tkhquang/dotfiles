@@ -22,7 +22,7 @@ export LESSHISTSIZE=0
 
 export LESS="-i -N -w -z-4 -g -M -X -F -R"
 export BAT_PAGER="less"
-export PAGER="nvim -c PAGER -"
+export PAGER="less"
 export MANPAGER="nvim -c MANPAGER \
 -c ':setlocal conceallevel=0' \
 -c ':setlocal colorcolumn=0' \
