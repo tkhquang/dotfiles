@@ -14,7 +14,6 @@ For migration references only.
 4. Docker\*
 5. [userChomeJS](https://github.com/xiaoxiaoflood/firefox-scripts)
 6. Steam
-7. [Change Lockscreen format](https://askubuntu.com/questions/783184/how-to-display-kde-lock-screen-time-in-24-hour-format#comment1729228_784181)
 
 ## TODO
 
@@ -25,3 +24,4 @@ For migration references only.
 - [ ] Resolve mapping conflicts in vimrc
 - [ ] Fix nvim's high CPU usage
 - [ ] Restucture system-wide shellscripts
+- [ ] Move commit message template to git pre-commit hooks
