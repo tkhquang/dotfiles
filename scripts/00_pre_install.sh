@@ -47,11 +47,6 @@ if [[ -d ~/.config/nvim ]]; then
   create_backup "$HOME/.config/nvim"
 fi
 
-if [ -x "$(command -v tilix)" ]; then
-  dconf dump /com/gexperts/Tilix/ > ~/.backup/tilix.dconf.$(date +'%Y-%m-%d.%H.%M.%S').bak
-  echo "+ tilix.dconf >>> ~/.backup/tilix.dconf.$(date +'%Y-%m-%d.%H.%M.%S').bak"
-fi
-
 unset -f create_backup
 
 echo ">>> Backup created in ~/.backup!"

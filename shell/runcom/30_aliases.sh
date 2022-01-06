@@ -69,9 +69,6 @@ alias ts="tmux new-session -s"
 alias tksv="tmux kill-server"
 alias tkss="tmux kill-session -t"
 
-### Tilix
-alias tilix-prefs="tilix --preferences"
-
 # List users
 alias ls-users="cut -d: -f1 /etc/passwd"
 

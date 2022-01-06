@@ -6,11 +6,6 @@ echo ">>> Commit to git..."
 
 git pull origin master
 
-# Back up current Tilix configs
-if [ -x "$(command -v tilix)" ]; then
-  dconf dump /com/gexperts/Tilix/ > tilix.dconf
-fi
-
 touch ~/dotfiles/.gitmessage
 cat <<EOF | tee ~/dotfiles/.gitmessage
 Backup at $(date)

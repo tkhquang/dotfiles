@@ -16,25 +16,24 @@ for file in $HOME/dotfiles/bin_common/*; do
   fi
 done
 
-echo "+ Restoring Tilix config"
-dconf load /com/gexperts/Tilix/ < ~/dotfiles/tilix.dconf
-
-# Open Tilix Here
+# Open Kitty Here
 mkdir -p ~/.local/share/kservices5/ServiceMenus/
-cat << EOF | tee ~/.local/share/kservices5/ServiceMenus/openTilixHere.desktop
+cat << EOF | tee ~/.local/share/kservices5/ServiceMenus/kittyhere.desktop
 [Desktop Entry]
 Type=Service
-ServiceTypes=KonqPopupMenu/Plugin
-MimeType=inode/directory
-Actions=openTilix;
-X-KDE-Priority=TopLevel
-X-KDE-StartupNotify=false
-Icon=com.gexperts.Tilix
+X-KDE-ServiceTypes=KonqPopupMenu/Plugin
+MimeType=inode/directory;
+Actions=openKittyHere;
+X-KDE-AuthorizeAction=shell_access
 
-[Desktop Action openTilix]
-Name=Open Tilix Here
-Icon=com.gexperts.Tilix
-Exec=tmux split-window -h -c %f & tmux send-keys "$@" Enter & tmux last-pane & tilix -w %u
+[Desktop Action openKittyHere]
+TryExec=kitty
+Icon=utilities-terminal
+Exec=tmux split-window -h -c %f & tmux send-keys "$@" Enter & tmux last-pane & kitty
+Name=Open Kitty Here
+Name[nl]=Kitty hier openen
+Comment=Opens a terminal in the current folder
+Comment[nl]=Opent een terminalvenster in de huidige map
 EOF
 
 # # Workaround for Steam notification greyed out
