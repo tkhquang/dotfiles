@@ -11,8 +11,9 @@ if [ -x "$(command -v tilix)" ]; then
   dconf dump /com/gexperts/Tilix/ > tilix.dconf
 fi
 
+git config commit.template ./.gitmessage
 git add .
-git commit -m "Backup at $(date)"
-git push origin master
+git commit
+# git push origin master
 
 echo ">>> Done!"
