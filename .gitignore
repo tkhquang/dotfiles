@@ -85,3 +85,4 @@ temp.*
 
 bin_common/ngrok
 .config/kitty/os.conf
+.gitmessage

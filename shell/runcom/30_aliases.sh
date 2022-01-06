@@ -58,11 +58,6 @@ alias lock="loginctl lock-session"
 # Run ArchiSteamFarm
 alias asf="ArchiSteamFarm"
 
-### Docker
-alias dpsa="docker ps -a"
-alias dcup="docker-compose up"
-alias dcupd="docker-compose up -d"
-
 ### Tmux
 alias tmux="tmux -u -2"
 alias t="tmux"
