@@ -16,6 +16,7 @@ EOF
 git config commit.template ~/dotfiles/.gitmessage
 git add .
 git commit
+git config --unset commit.template
 git push origin master
 
 echo ">>> Done!"
