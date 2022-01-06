@@ -7,7 +7,7 @@ echo ">>> Commit to git..."
 git pull origin master
 
 touch ~/dotfiles/.gitmessage
-cat <<EOF | tee ~/dotfiles/.gitmessage
+cat <<EOF | tee ~/dotfiles/.gitmessage > /dev/null
 Backup at $(date)
 
 -

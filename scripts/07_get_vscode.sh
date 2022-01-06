@@ -6,7 +6,7 @@ echo ">>> Installing latest VSCode..."
 
 sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
 
-cat <<EOF | sudo tee /etc/yum.repos.d/vscode.repo
+cat <<EOF | sudo tee /etc/yum.repos.d/vscode.repo > /dev/null
 [code]
 name=Visual Studio Code
 baseurl=https://packages.microsoft.com/yumrepos/vscode

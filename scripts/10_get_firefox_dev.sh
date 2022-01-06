@@ -9,7 +9,7 @@ sudo mkdir -p /opt/firefox-developer/
 
 curl -L "https://download.mozilla.org/?product=firefox-devedition-latest-ssl&os=linux64&lang=en-US" | sudo tar --strip-components 1 -jxp -C /opt/firefox-developer/
 
-cat << EOF | sudo tee /firefox-developer-edition.desktop
+cat << EOF | sudo tee /firefox-developer-edition.desktop > /dev/null
 [Desktop Entry]
 Version=1.0
 Name=Firefox Developer Edition
