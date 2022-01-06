@@ -16,7 +16,7 @@ while read target; do
   esac
   if [[ -f "$HOME/$target" ]]; then
     if [[ -L $HOME/$target ]] && ! [[ -e $HOME/$target ]]; then
-      rm -v -- $HOME/$target
+      rm -v -- "$HOME/$target"
     fi
   elif [[ -d "$HOME/$target" ]]; then
     for file in "$HOME/$target"/*; do
@@ -51,20 +51,20 @@ for file in /etc/profile.d/*.local /etc/profile.d/*.sh; do
   fi
 done
 # Create symlinks
-for file in $HOME/dotfiles/shell/system-wide/*.local $HOME/dotfiles/shell/system-wide/*.sh; do
+for file in "$HOME/dotfiles/shell/system-wide"/*.local "$HOME/dotfiles/shell/system-wide"/*.sh; do
   sudo ln -svf "$file" "/etc/profile.d/${file##*/}"
 done
 
 ### $HOME/.oh-my-zsh/custom
-mkdir -p $HOME/.oh-my-zsh/custom
+mkdir -p "$HOME/.oh-my-zsh/custom"
 # Remove all broken symbolic links in the targer directory (if any)
-for file in $HOME/.oh-my-zsh/custom/*.zsh; do
+for file in "$HOME/.oh-my-zsh/custom"/*.zsh; do
   if [[ -L "$file" ]] && ! [[ -e "$file" ]]; then
     rm -v -- "$file"
   fi
 done
 # Create symlinks
-for file in $HOME/dotfiles/shell/oh-my-zsh/*.zsh; do
+for file in "$HOME/dotfiles/shell/oh-my-zsh"/*.zsh; do
   ln -svf "$file" "$HOME/.oh-my-zsh/custom/${file##*/}"
 done
 

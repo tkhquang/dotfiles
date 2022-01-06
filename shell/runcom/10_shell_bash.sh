@@ -23,6 +23,6 @@ fi
 # asdf
 if has asdf; then
   if [[ -f $HOME/.asdf/completions/asdf.bash ]]; then
-    . $HOME/.asdf/completions/asdf.bash
+    . "$HOME/.asdf/completions/asdf.bash"
   fi
 fi

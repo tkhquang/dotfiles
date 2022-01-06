@@ -17,4 +17,4 @@ EOF
 
 sudo dnf install -y code
 
-echo ">>> Go ${latest} installed!"
+echo ">>> VSCode installed!"

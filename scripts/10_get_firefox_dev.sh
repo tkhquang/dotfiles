@@ -28,7 +28,7 @@ EOF
 sudo ln -sf /opt/firefox-developer/firefox /usr/local/bin/firefox
 
 # For auto-update feature
-sudo chown -R $USER:$USER /opt/firefox-developer
+sudo chown -R "$USER":"$USER" /opt/firefox-developer
 
 # TODO: Install userChromeJS support
 # https://github.com/xiaoxiaoflood/firefox-scripts

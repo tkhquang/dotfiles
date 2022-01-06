@@ -19,7 +19,7 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-for file in $HOME/dotfiles/shell/runcom/*.sh; do
+for file in "$HOME/dotfiles/shell/runcom"/*.sh; do
   if [[ -f "$file" ]]; then
     source "$file"
   fi

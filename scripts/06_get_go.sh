@@ -11,7 +11,7 @@ echo ">>> Installing latest Golang release for AMD64..."
 latest="$(wget -qO- https://golang.org/VERSION?m=text | sed -nre 's/^[^0-9]*(([0-9]+\.)*[0-9]+).*/\1/p')"
 
 # Exit script if the same version has been installed
-if [ ${latest} == $(go version | sed -nre 's/^[^0-9]*(([0-9]+\.)*[0-9]+).*/\1/p') ]; then
+if [ "${latest}" == "$(go version | sed -nre 's/^[^0-9]*(([0-9]+\.)*[0-9]+).*/\1/p')" ]; then
   echo ">>> Latest Go installed, skipping..."
   exit 0
 fi
@@ -39,4 +39,3 @@ echo "export PATH='$PATH':/usr/local/go/bin:$GOPATH/bin" >> ~/.profile && source
 rm go"${latest}".linux-amd64.tar.gz
 
 echo ">>> Go ${latest} installed!"
-

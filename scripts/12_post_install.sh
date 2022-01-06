@@ -10,9 +10,9 @@ echo "+ Installing Vim plugins"
 vim +PlugInstall! +qall
 
 echo "+ Configurating bin_common"
-for file in $HOME/dotfiles/bin_common/*; do
+for file in "$HOME/dotfiles/bin_common"/*; do
   if [[ -f "$file" ]]; then
-    chmod +x $file
+    chmod +x "$file"
   fi
 done
 

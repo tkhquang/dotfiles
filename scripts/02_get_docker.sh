@@ -23,6 +23,6 @@ sudo systemctl enable docker
 
 # Runing without sudo
 sudo groupadd docker
-sudo usermod -aG docker $USER
+sudo usermod -aG docker "$USER"
 
 echo ">>> docker & docker-compose installed!"
