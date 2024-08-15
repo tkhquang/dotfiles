@@ -27,3 +27,7 @@ fi
 if [[ -d "$HOME/bin_common" ]]; then
   export PATH=$HOME/bin_common:$PATH
 fi
+
+# .NET
+export DOTNET_ROOT=$HOME/dotnet
+export PATH=$PATH:$HOME/dotnet

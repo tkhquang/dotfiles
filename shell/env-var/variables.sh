@@ -122,3 +122,5 @@ if has fzf; then
     unset fzf_ctrl_t_opts
   fi
 fi
+
+export PATH=/opt/homebrew/bin:$PATH

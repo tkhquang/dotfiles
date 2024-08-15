@@ -27,9 +27,7 @@ plugins=(
   colorize
   command-not-found
   dnf
-  fd
   git
-  ripgrep
   history-substring-search
   sudo
   vi-mode
