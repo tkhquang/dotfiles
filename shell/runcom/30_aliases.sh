@@ -188,11 +188,11 @@ if has bat; then
   alias cat="bat"
 fi
 
-# Use 'exa' as default 'ls' if available
-# Use 'exa --tree' as default 'tree' if available
-if has exa; then
-  alias ls="exa"
-  alias tree="exa --tree"
+# Use 'eza' as default 'ls' if available
+# Use 'eza --tree' as default 'tree' if available
+if has eza; then
+  alias ls="eza"
+  alias tree="eza --tree"
 fi
 
 # }}}

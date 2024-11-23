@@ -124,3 +124,5 @@ if has fzf; then
 fi
 
 export PATH=/opt/homebrew/bin:$PATH
+# For tkinter
+export PATH=/usr/local/opt/tcl-tk/bin:$PATH

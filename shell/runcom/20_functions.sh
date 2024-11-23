@@ -71,7 +71,7 @@ function weather() {
 # Usage: list_file_by_size +1M
 # Find all files larger than 1 megabyte
 function list_file_by_size() {
-  local ls_cmd=$(has exa && echo "exa" || echo "ls")
+  local ls_cmd=$(has eza && echo "eza" || echo "ls")
 
   if [[ $# -eq 0 ]]; then
     echo "too few arguments"
